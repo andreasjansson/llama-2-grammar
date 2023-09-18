@@ -1,0 +1,21 @@
+build:
+  gpu: true
+  system_packages:
+    - "wget"
+    - "cmake"
+    - "g++"
+    - "build-essential"
+  python_version: "3.11"
+  # a list of packages in the format <package-name>==<version>
+  python_packages:
+    - "json-schema-enforcer==0.1.4"
+    - "scipy==1.11.2"
+  run:
+    #- "git clone https://github.com/ggerganov/llama.cpp.git"
+    #- "make -C llama.cpp"
+    - "CMAKE_ARGS='-DLLAMA_CUBLAS=on' FORCE_CMAKE=1 pip install llama-cpp-python --no-cache-dir"
+    #- "pip install llama-cpp-python"
+    - "mkdir -p models"
+    - "wget -q https://huggingface.co/TheBloke/CodeLlama-7B-GGUF/resolve/main/codellama-7b.Q5_K_S.gguf -O models/codellama-7b.Q5_K_S.gguf"
+
+predict: "predict.py:Predictor"
