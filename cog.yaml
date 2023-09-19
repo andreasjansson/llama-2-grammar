@@ -10,11 +10,8 @@ build:
   python_packages:
     - "json-schema-enforcer==0.1.4"
   run:
-    #- "git clone https://github.com/ggerganov/llama.cpp.git"
-    #- "make -C llama.cpp"
     - "CMAKE_ARGS='-DLLAMA_CUBLAS=on' FORCE_CMAKE=1 pip install llama-cpp-python --no-cache-dir"
-    #- "pip install llama-cpp-python"
-    - "mkdir -p models"
-    - "wget -q https://huggingface.co/TheBloke/Llama-2-13B-GGUF/resolve/main/llama-2-13b.Q5_K_S.gguf -O models/llama-2-13b.Q5_K_S.gguf"
+    - "curl -o /usr/local/bin/pget -L 'https://github.com/replicate/pget/releases/download/v0.0.1/pget' && chmod +x /usr/local/bin/pget"
+    - "mkdir -p /models"
 
 predict: "predict.py:Predictor"

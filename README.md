@@ -1,5 +1,5 @@
-# Llama 2 function calling
+# Llama 2 grammar
 
-[![Run on Replicate](https://replicate.com/andreasjansson/llama-2-13b-function/badge)](https://replicate.com/andreasjansson/llama-2-13b-function)
+[![Run on Replicate](https://replicate.com/andreasjansson/llama-2-13b-function/badge)](https://replicate.com/andreasjansson/llama-2-13b-grammar)
 
-Llama 2 with grammar-based decoding (provided by llama.cpp) for constraining the output to a json schema.
+Llama 2 with grammar-based decoding (provided by llama.cpp).
